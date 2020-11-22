@@ -2,10 +2,13 @@
 
 Maupassant theme, ported to Hugo.
 
-1. 预览效果:[飞雪无情的博客](http://www.flysnow.org)
-2. [English Docs](README_EN.md)
+1. 预览效果:[闪电侠的小黑板](http://www.chende.ren)
 
-一款非常简洁、性能高的Hugo主题，适配不同的设备（PC，Mobile等）。 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
+一款非常简洁、性能高的Hugo主题，适配不同的设备（PC，Mobile等）。 
+
+## 说明
+1. [飞雪无情的博客](http://www.flysnow.org) 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
+2. [闪电侠的小黑板](http://www.chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些许样式的调整。
 
 ## Preview
 
@@ -51,7 +54,7 @@ git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant
 
 #### 依赖要求
 
-Hugo Version >= v 0.60.0
+Hugo Version >= v 0.78.2
 
 #### 应用主题
 
@@ -62,14 +65,6 @@ theme = "maupassant"
 #### 快速开始
 
 在主题的 [exampleSite](exampleSite/) 示例目录下有`config.toml `文件，把`config.toml `文件复制到你的站点目录下，然后根据自己的需求修改即可
-
-**PS: 一定要使用`post`目录，而不是`posts`,一定要记住，所以如果你使用`hugo`命令，你应该`hugo new post/filename.md`这样创建**
-
-**PS: 一定要使用`post`目录，而不是`posts`,一定要记住，所以如果你使用`hugo`命令，你应该`hugo new post/filename.md`这样创建**
-
-**PS: 一定要使用`post`目录，而不是`posts`,一定要记住，所以如果你使用`hugo`命令，你应该`hugo new post/filename.md`这样创建**
-
-
 
 #### 代码高亮
 
@@ -95,24 +90,31 @@ theme = "maupassant"
 
 ```toml
 [menu]
-
-  [[menu.main]]
-    identifier = "books"
-    name = "新书"
-    url = "/books/"
-    weight = 2
-
-  [[menu.main]]
+[[menu.main]]
     identifier = "archives"
     name = "归档"
     url = "/archives/"
+    weight = 2
+[[menu.main]]
+    identifier = "idea"
+    name = "杂思"
+    url = "/idea/"
     weight = 3
-
-  [[menu.main]]
+[[menu.main]]
+    identifier = "licai"
+    name = "理财"
+    url = "/licai/"
+    weight = 4
+[[menu.main]]
+    identifier = "tools"
+    name = "工具"
+    url = "/tools/"
+    weight = 5
+[[menu.main]]
     identifier = "about"
     name = "关于"
     url = "/about/"
-    weight = 4
+    weight = 6
 ```
 
 `identifier`标志符必须是唯一的，不能重复；`weight`用于排序，值越小越靠前。
@@ -150,13 +152,9 @@ type: "search"
 
 ```toml
 [[params.links]]
-  title = "Android Gradle权威指南"
-  name = "Android Gradle权威指南"
-  url = "http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e"
-[[params.links]]
-  title = "常用开发工具CDN镜像"
-  name = "常用开发工具CDN镜像"
-  url = "http://mirrors.flysnow.org/"
+    title = "飞雪无情的博客"
+    name = "飞雪无情的博客"
+    url = "http://www.flysnow.org"
 ```
 
 `params.links`是一个数组，所以我们可以自定义很多友情链接。`name`表示显示的链接文本，`title`表示鼠标悬停在友情链接时，显示的文本。
@@ -169,15 +167,6 @@ type: "search"
 [[params.ads]]
   title = "领取￥1888阿里云产品通用代金券"
   url = "https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=jdg9oj97"
-
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/act/vmpt/aliyun-group/home.html?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB17qJhXpzqK1RjSZFvXXcB7VXa-200-126.jpg"
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB1aDXhXpzqK1RjSZFvXXcB7VXa-259-194.jpg"
 ```
 
 `params.ads`是一个数组，所以我们可以自定义很多广告。如果`img`存在，则优先使用图片广告,`title`表示鼠标悬停在广告链接时，显示的文本。

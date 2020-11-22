@@ -6,25 +6,22 @@
 name = "Maupassant Hugo"
 license = "MIT"
 licenselink = ""
-description = "Maupassant 最初是由Cho大神为Typecho平台设计开发的一套响应式模板，简洁、大气，大道至简。后经过多人接力优化。"
-homepage = "https://github.com/pagecho/maupassant"
+description = "Maupassant 最初是由Cho大神为Typecho平台设计开发的一套响应式模板，简洁、大气，大道至简。后经过多人接力修改。"
+homepage = "https://github.com/qinchende/maupassant-hugo"
 tags = ["maupassant"]
 features = ["Tag","Category","Menu","Recent Post","Archives"]
-min_version = "0.30"
+min_version = "0.78"
 
 [author]
   name = "闪电侠"
   homepage = "http://www.faster.ren"
 
-[originauthor]
+[original3]
   name = "飞雪无情"
   homepage = "https://www.flysnow.org"
-
-[originauthor]
+[original2]
   name = "Joker Qyou"
   homepage = "https://mynook.info"
-
-
 # If porting an existing theme
 [original]
   name = "pagecho"
