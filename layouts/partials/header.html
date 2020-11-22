@@ -13,13 +13,15 @@
                         {{ .Site.Title }}
                     </a>
                 {{ end }}
-                {{ with .Site.Params.subtitle }}<p class="description">{{ . }}</p>{{ end }}
+                <p class="description">{{ .Site.Params.subtitle }}</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="{{ if or (.IsHome) (eq .Type "post") }}current{{ end }}" href="{{ .Site.BaseURL | absURL }}">首页</a>
+                    <a class="{{ if or (.IsHome) (eq .Type "post") }}current{{ end }}"
+                       href="{{ .Site.BaseURL | absURL }}">首页</a>
                     {{ range .Site.Menus.main }}
-                    <a {{ if eq .URL $.RelPermalink }}class="current"{{ end }} href="{{ .URL | absURL }}" title="{{ .Name }}">{{ .Name }}</a>
+                        <a {{ if eq .URL $.RelPermalink }}class="current"{{ end }} href="{{ .URL | absURL }}"
+                           title="{{ .Name }}">{{ .Name }}</a>
                     {{ end }}
                 </nav>
             </div>

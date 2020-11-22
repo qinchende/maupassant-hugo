@@ -4,7 +4,7 @@ $(window).scroll(function() {
 $("#rocket").click(function() {
     $("#rocket").addClass("launch");
     $("html, body").animate({
-        scrollTop: 0
+        "scrollTop": 0
     }, 500, function() {
         $("#rocket").removeClass("show launch");
     });

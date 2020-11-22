@@ -1,16 +1,18 @@
-{{ define "content"}}
-<div class="post-archive">
-    {{ range (where (where .Site.Pages "Type" "in" (slice "post" "posts")) "Kind" "page").GroupByDate "2006" }}
-    <h2>{{ .Key }}</h2>
-    <ul class="listing">
-        {{ range .Pages }}
-        <li>
-            <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-            <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-        </li>
+{{ define "content" }}
+    <div class="post-archive">
+        {{ range (where (where .Site.Pages "Type" "in" (slice "tech" "licai" "idea" "tools" "about")) "Kind" "page").GroupByDate "2006" }}
+            <h2>{{ .Key }}</h2>
+            <ul class="listing">
+                {{ range .Pages }}
+                    <li>
+                        <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+                        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                        {{- with .Params.Categories -}}
+                            <span class="cate">{{- range . -}}[{{- . -}}]{{- end -}}</span>
+                        {{- end -}}
+                    </li>
+                {{ end }}
+            </ul>
         {{ end }}
-    </ul>
-    {{ end }}
-
-</div>
+    </div>
 {{ end }}

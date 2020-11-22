@@ -1,4 +1,4 @@
-{{ define "content"}}
+{{ define "content" }}
 {{- $paginator := .Paginate .Data.Pages.ByDate.Reverse 10 }}
 <div class="res-cons">
     {{ range $index,$data := $paginator.Pages }}
@@ -21,7 +21,7 @@
         </div>
         {{ end }}
         <div class="post-content">
-            {{ .Summary }}……
+            {{ truncate .Site.Params.summaryLen .Summary }}……
         </div>
         <p class="readmore"><a href="{{ .Permalink }}">阅读全文</a></p>
     </article>

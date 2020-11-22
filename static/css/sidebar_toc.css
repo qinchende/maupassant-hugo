@@ -1,0 +1,60 @@
+/* single page toc style for partials/toc.html */
+.post-toc {
+    position: fixed;
+    width: 281px;
+    margin-left: -25px;
+    padding: 5px 10px;
+    font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 5px;
+    background-color: rgba(238, 238, 221, 1);
+    background-clip: padding-box;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+    word-wrap: break-word;
+    white-space: nowrap;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 999;
+    cursor: pointer;
+    max-height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.post-toc .post-toc-title {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.post-toc .post-toc-content {
+    font-size: 1.1em;
+}
+
+.post-toc .post-toc-content > nav > ul {
+    margin: 10px 0;
+}
+
+.post-toc .post-toc-content ul {
+    padding-left: 20px;
+    list-style: square;
+    margin: 0.5em;
+    line-height: 2.0em;
+}
+
+.post-toc .post-toc-content ul ul {
+    padding-left: 15px;
+    display: none;
+}
+
+@media print, screen and (max-width: 1057px) {
+    .post-toc {
+        display: none;
+    }
+}
+/* end of toc */
