@@ -22,7 +22,6 @@ min_version = "0.78"
 [original2]
   name = "Joker Qyou"
   homepage = "https://mynook.info"
-# If porting an existing theme
 [original]
   name = "pagecho"
   homepage = "https://chopstack.com/"

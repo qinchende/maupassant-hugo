@@ -1,12 +1,8 @@
 baseURL = "http://www.chende.ren"
 languageCode = "zh-CN"
 title = "闪电侠的小黑板"
-#theme = "clarity"
-#theme = "ace"
-#theme = "book8"
 theme = "maupassant"
 
-#themeColor = "theme-base-08"
 #googleAnalytics = "GA ID"       ## 分析统计
 #googleAnalytics = ""            ## UA-XXXXXXXX-X
 disablePathToLower = true       # 是否禁止URL Path转小写
@@ -57,7 +53,6 @@ enableEmoji = true
 
 # 插件
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#disqusShortname = "sandianxia"  ## 是否开启disqus评论，不要和utteranc同时开启
 [params.flowchartDiagrams]
     enable = true
     options = ""
@@ -67,12 +62,13 @@ enableEmoji = true
     options = ""
     # default: "{theme: 'simple'}"
 
-#[params.utteranc]
-#    enable = true
-#    repo = ""               # 存储评论的Repo，格式为 owner/repo
-#    issueTerm = "pathname"  # 表示你选择以那种方式让github issue的评论和你的文章关联。
-#    theme = "github-light"  # 样式主题，有github-light和github-dark两种
-
+# 评论，disqus或utteranc
+#disqusShortname = "yourdiscussshortname"   # 是否开启 disqus 评论，不要和utteranc同时开启
+[params.utteranc]
+    enable = true
+    repo = "xxx/xxx"                        # 存储评论的Repo，格式为 owner/repo
+    issueTerm = "pathname"                  # 表示你选择以那种方式让github issue的评论和你的文章关联。
+    theme = "github-light"                  # 样式主题，有github-light和github-dark两种
 
 # 菜单
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

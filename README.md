@@ -42,12 +42,13 @@ Maupassant theme, ported to Hugo.
 23. 自定义备案信息
 24. 自定义图片CDN
 25. 图片点击放大
+26. 带.html后缀的页面
 
 ## 下载安装
 
 ```bash
 cd <YOUR Bolg Root Dir>
-git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant
+git clone https://github.com/qinchende/maupassant-hugo themes/maupassant
 ```
 
 ## 配置
@@ -123,11 +124,10 @@ theme = "maupassant"
 
 该主题支持文章目录（大纲）,大纲是通过`h1~h7`标题自动生成，在MD文件里就是`##`这类标题的标记，这里建议最多使用两层文章目录，而且最好是从`h2`开始，便于SEO优化。
 如果要开启一篇文章的文章目录，只需要在`Front Matter` 添加`toc=true`即可，默认是不开启文章目录的。
-
 ```toml
 toc = true
 ```
-当左侧空白空间宽度超过100px时，则显示悬浮目录。
+我对文中目录的样式做了修改，移动到右侧边栏悬浮显示
 
 #### Local Search 站内搜索
 
@@ -171,7 +171,7 @@ type: "search"
 
 `params.ads`是一个数组，所以我们可以自定义很多广告。如果`img`存在，则优先使用图片广告,`title`表示鼠标悬停在广告链接时，显示的文本。
 
-具体效果参考 [http://www.flysnow.org/](http://www.flysnow.org/)
+具体效果参考 [http://www.chende.ren](http://www.chende.ren)
 
 #### 添加GA分析统计
 
@@ -299,6 +299,34 @@ summaryLength = 140
 ```toml
 ## 是否禁止URL Path转小写
 disablePathToLower = true
+```
+#### 生成带.html后缀的路径
+
+如果配置参数 uglyurls = true，博客路径生成规则/年/月/日/Markdown文件的title或者filename加上.html结尾，注意路径都是小写。而且调试或发布
+的时候都需要命令行加上参数 --uglyURLs
+```toml
+uglyurls = true
+[frontmatter]
+    date = [":filename", ":default"]
+[permalinks]
+    tech = "/:year/:month/:day/:filename"
+```
+
+注意新版hugo(0.78以后吧) --uglyURLs 不再支持，取代的做法就是设置系统的环境变量:
+- env HUGO_UGLYURLS="true" hugo server -D
+- env HUGO_UGLYURLS="true" hugo -D
+
+但是全站都变成.html结尾的路径了，并不好，可以单独在每份Front Matter中指定url来设置，比如 archetypes/default.md 做统一配置
+```
+---
+title: {{ replace .Name "-" " " | title }}
+url: {{ replace .File.Dir "content" "" -}}{{- .Name -}}.html
+date: {{ .Date }}
+tags: []
+categories: []
+toc: false
+draft: true
+---
 ```
 
 #### 自定义CSS&JS
@@ -439,6 +467,7 @@ disablePathToLower = true
 + Ghost: https://github.com/LjxPrime/maupassant/
 + Hexo: https://github.com/tufu9441/maupassant-hexo
 + Hugo: https://github.com/flysnow-org/maupassant-hugo
++ Hugo: https://github.com/qinchende/maupassant-hugo
 
 ```
 
