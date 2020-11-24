@@ -1,6 +1,6 @@
 ---
 title: {{ replace .Name "-" " " | title }}
-url: {{ replace .File.Dir "content" "" -}}{{- .Name -}}.html
+url: {{ with replace .File.Dir "content" "" -}}{{- replace . "\\" "/" -}}{{- end -}}{{- .Name -}}.html
 date: {{ .Date }}
 tags: []
 categories: []
