@@ -8,7 +8,7 @@ Maupassant theme, ported to Hugo.
 
 ## 说明
 1. [飞雪无情的博客](http://www.flysnow.org) 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
-2. [闪电侠的小黑板](http://www.chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些许样式的调整。
+2. [闪电侠的小黑板](http://www.chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些样式的修改，功能的调整。
 
 ## Preview
 
