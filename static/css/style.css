@@ -918,13 +918,13 @@ img.alignright {
 
     #main {
         width: 100%;
-        margin-right: -320px;
+        margin-right: -310px;
         float: left;
     }
 
     .res-cons {
         width: auto;
-        margin-right: 320px;
+        margin-right: 310px;
     }
 
     .post-content img {
@@ -939,13 +939,13 @@ img.alignright {
 
     #main {
         width: 100%;
-        margin-right: -260px;
+        margin-right: -225px;
         float: left;
     }
 
     .res-cons {
         width: auto;
-        margin-right: 260px;
+        margin-right: 225px;
     }
 
     #secondary {
