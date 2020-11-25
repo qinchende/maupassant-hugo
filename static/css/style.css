@@ -126,7 +126,7 @@ mark {
 
 pre, code {
     font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
-    font-size: .95057em;
+    font-size: .9489em;
 }
 
 pre {
@@ -457,12 +457,12 @@ textarea {
     display: inline;
 }
 
-.post-content p code {
+.post-content p code, .post-content ol code {
     display: inline;
-    padding: .2em .4em;
-    margin: 0;
-    font-size: 85%;
-    background-color: rgba(27, 31, 35, .10);
+    padding: .1em .3em;
+    margin: 0 .2em;
+    font-size: 90%;
+    background-color: rgb(239, 239, 235);
     border-radius: 3px;
 }
 
