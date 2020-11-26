@@ -488,7 +488,7 @@ textarea {
 }
 
 .post-content div.highlight {
-    margin-top: -1em;
+    margin-top: -0.99em;
 }
 
 .post-content div.highlight pre {
@@ -1270,7 +1270,7 @@ table tr {
 
 /* 影响表格的样式 */
 table tr th, table tr td {
-    font-size: 0.6em;
+    font-size: 1em;
     border: 1px solid #CCC;
     padding: 0.5em 1em;
     text-align: left;
