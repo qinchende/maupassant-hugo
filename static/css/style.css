@@ -1270,10 +1270,14 @@ table tr {
 
 /* 影响表格的样式 */
 table tr th, table tr td {
-    font-size: 1em;
+    font-size: 0.8413em;
     border: 1px solid #CCC;
     padding: 0.5em 1em;
     text-align: left;
+}
+/* 保持 */
+div.highlight th, div.highlight td {
+    font-size: 1em;
 }
 
 .github-badge {
