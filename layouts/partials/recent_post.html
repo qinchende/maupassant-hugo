@@ -1,6 +1,6 @@
 <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
-    {{ range first 8 (where (where .Site.Pages "Type" "in" (slice "tech" "licai" "idea" "tools")) "Kind" "page") }}
+    {{ range first 8 (where (where .Site.Pages "Type" "in" .Site.Params.mainSections) "Kind" "page") }}
         <li>
             <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
         </li>

@@ -1,66 +1,64 @@
 {{ define "content" }}
-<div class="res-cons">
-    <h3 class="archive-title">
-        搜索
-        <span class="keyword">哈哈</span>
-        的结果
-    </h3>
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="链接">标题</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2019年12月01日
-        </date>
-        <div class="post-content">
-            概要……
-        </div>
-        <p class="readmore"><a href="链接">阅读全文</a></p>
-    </article>
-</div>
+    <div class="res-cons">
+        <h3 class="archive-title">
+            搜索<span class="keyword">？？</span>的结果
+        </h3>
+        <article class="post">
+            <header>
+                <h1 class="post-title">
+                    <a href="链接">标题</a>
+                </h1>
+            </header>
+            <date class="post-meta meta-date">
+                2019年12月01日
+            </date>
+            <div class="post-content">
+                概要……
+            </div>
+            <p class="readmore"><a href="链接">阅读全文</a></p>
+        </article>
+    </div>
 
-<script type="text/javascript">
-    let getUrlParameter = function getUrlParameter(sParam) {
-        let sPageURL = window.location.search.substring(1),
-            sURLletiables = sPageURL.split('&'),
-            sParameterName,
-            i;
+    <script type="text/javascript">
+        let getUrlParameter = function getUrlParameter(sParam) {
+            let sPageURL = window.location.search.substring(1),
+                sURLletiables = sPageURL.split('&'),
+                sParameterName,
+                i;
 
-        for (i = 0; i < sURLletiables.length; i++) {
-            sParameterName = sURLletiables[i].split('=');
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            for (i = 0; i < sURLletiables.length; i++) {
+                sParameterName = sURLletiables[i].split('=');
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
             }
-        }
-    };
+        };
 
-    // 这个方案，不需要动态服务器的支持，通过预先生成好的RSS聚合信息，自动搜索。很巧妙
-    // 但是当网站内容太多的时候，这个方案可能会比较低效
-    $(document).ready(function () {
-        let q = getUrlParameter("q");
-        $("span.keyword").text(q);
-        $("article.post").remove();
-        $.ajax({
-            url: '{{"index.xml"|absURL}}',
-            dataType: "xml",
-            success: function (data) {
-                $(data).find("item").each(function () {
-                    let item = $(this);
-                    let title = item.find("title").text();
-                    if (title.toLowerCase().indexOf(q.toLowerCase()) < 0) return;
+        // 这个方案，不需要动态服务器的支持，通过预先生成好的RSS聚合信息，自动搜索。很巧妙
+        // 但是当网站内容太多的时候，这个方案可能会比较低效
+        $(document).ready(function () {
+            let q = getUrlParameter("q");
+            $("span.keyword").text(q);
+            $("article.post").remove();
+            $.ajax({
+                url: '{{"index.xml"|absURL}}',
+                dataType: "xml",
+                success: function (data) {
+                    $(data).find("item").each(function () {
+                        let item = $(this);
+                        let title = item.find("title").text();
+                        if (title.toLowerCase().indexOf(q.toLowerCase()) < 0) return;
 
-                    let url = item.find("link").text();
-                    let searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
-                    let pubDate = new Date(item.find("pubDate").text())
-                    searchItem += `<date class="post-meta meta-date">` + pubDate.getFullYear() + `年` + (pubDate.getMonth() + 1) + `月` + pubDate.getDate() + `日</date>`;
-                    searchItem += `<div class="post-content">` + item.find("description").text().substr(0, '{{ .Site.Params.summaryLen }}') + `……</div><p class="readmore"><a href="` + url + `">阅读全文</a></p></article>`;
+                        let url = item.find("link").text();
+                        let searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
+                        let pubDate = new Date(item.find("pubDate").text())
+                        searchItem += `<date class="post-meta meta-date">` + pubDate.getFullYear() + `年` + (pubDate.getMonth() + 1) + `月` + pubDate.getDate() + `日</date>`;
+                        searchItem += `<div class="post-content">` + item.find("description").text().substr(0, '{{ .Site.Params.summaryLen }}') + `……</div><p class="readmore"><a href="` + url + `">阅读全文</a></p></article>`;
 
-                    $("div.res-cons").append(searchItem);
-                });
-            }
+                        $("div.res-cons").append(searchItem);
+                    });
+                }
+            });
         });
-    });
-</script>
+    </script>
 {{ end }}

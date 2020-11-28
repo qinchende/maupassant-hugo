@@ -1,4 +1,4 @@
-{{ if and (isset .Site.Params "cc")  (in (slice "tech" "licai" "idea") .Type) }}
+{{ if and (isset .Site.Params "cc")  (in .Site.Params.rightSections .Type) }}
     <div class="post-archive">
         <ul class="post-copyright">
             <li><strong>原文作者：</strong>

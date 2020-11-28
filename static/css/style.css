@@ -352,6 +352,9 @@ textarea {
 .post-title a, .keyword {
     color: #555;
 }
+.archive-title .keyword {
+    margin: 1px 4px;
+}
 
 .post-meta {
     padding: 0;
@@ -367,6 +370,7 @@ textarea {
 
 .meta-tags {
     display: inline-block;
+    margin: 0;
 }
 
 .meta-tags ul {
@@ -1110,8 +1114,8 @@ img.alignright {
 /* for archive page starts*/
 .post-archive {
     font-size: 15px;
-    line-height: 2;
-    padding-bottom: .8em;
+    line-height: 1.9;
+    /*padding-bottom: .8em;*/
 }
 
 .post-archive h2 {

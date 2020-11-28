@@ -16,22 +16,23 @@ enableEmoji = true
     name = "闪电侠"
 [params]
     author = "闪电侠"
-    subtitle = "专注于Golang、Node.js、Dart、WEB开发框架、高性能高可用架构、部门管理"
-    keywords = "闪电侠,Go,Golang,Node.js,Python,Ruby,Flutter,Dart,博客,部门管理,软件架构,Web框架,高可用,高性能"
+    subtitle = "专注于C、Node.js、Golang、Dart、WEB开发框架、高性能高可用架构、团队管理"
+    keywords = "闪电侠,C,Go,Golang,Node.js,Python,Ruby,Flutter,Dart,博客,部门管理,软件架构,Web框架,高可用,高性能"
     description = "专注于IT互联网，包括但不限于Go语言(golang)、C/C++、Flutter、Dart、Python、项目管理、软件架构等"
 
     localSearch = "true"            # 开启站内搜索
     beian = "京ICP备XXXX号-1"       # 备案号
     fancybox = "true"               # 图片点击放大
     busuanzi = true                 # 页面计数器
-    summaryLen = 170                ## 限制列表摘要字数
+    summaryLen = 170                # 限制列表摘要字数
+    mainSections = ["tech", "tools", "idea", "licai", "about"]
+    rightSections = ["tech", "idea", "licai"]
 
     # 这里我存放在了主题的static文件夹里，根目录的似乎也可以
     #customCSS = ['douban.css', 'other.css']
     # if ['custom.css'], load '/static/css/custom.css' file
     #customJS = ['douban.js']
     # if ['custom.js'], load '/static/js/custom.js' file
-    #mainSections = ["post", "about", "books"]
 
 [params.cc]
     name = "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"

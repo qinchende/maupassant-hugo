@@ -1,3 +1,11 @@
+{{ printf "%#v" . }}
+
+{{ with .Params.tags }}
+    {{range .}}
+        {{ . }}
+    {{ end }}
+{{ end }}
+
 {{ $related := .Site.RegularPages.Related . | first 5 }}
 {{ with $related }}
     <div class="post-archive">
@@ -9,3 +17,18 @@
         </ul>
     </div>
 {{ end }}
+
+{{/*{{ range (where (where .Site.Pages "Type" "in" .Site.Params.mainSections) "Kind" "page").GroupByDate "2006" }}*/}}
+{{/*    <h2>{{ .Key }}</h2>*/}}
+{{/*    <ul class="listing">*/}}
+{{/*        {{ range .Pages }}*/}}
+{{/*            <li>*/}}
+{{/*                <span class="date">{{ .Date.Format "2006/01/02" }}</span>*/}}
+{{/*                <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>*/}}
+{{/*                {{- with .Params.Categories -}}*/}}
+{{/*                    <span class="cate">{{- range . -}}[{{- . -}}]{{- end -}}</span>*/}}
+{{/*                {{- end -}}*/}}
+{{/*            </li>*/}}
+{{/*        {{ end }}*/}}
+{{/*    </ul>*/}}
+{{/*{{ end }}*/}}
