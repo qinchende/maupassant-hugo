@@ -737,6 +737,9 @@ textarea.textarea {
 .widget-list li {
     margin: 5px 0;
     line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .widget .tagcloud {

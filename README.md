@@ -2,7 +2,7 @@
 
 Maupassant theme, ported to Hugo.
 
-预览效果:[闪电侠的小黑板](http://www.chende.ren)
+预览效果：[闪电侠的小黑板](http://www.chende.ren)
 
 一款非常简洁、性能极高的Hugo主题，自适应不同的设备（PC，Mobile等）（自动调整显示模块）。 
 
@@ -17,7 +17,7 @@ Maupassant theme, ported to Hugo.
 ## 功能特性
 
 1. 支持Local Search 站内搜索
-2. 最近发表的文章支持，显示最近的8篇
+2. 最近发表的文章支持，显示最近的12篇
 3. 分类支持，并且可以显示分类内的文章数量
 4. 标签云支持
 5. 文章目录支持
@@ -33,8 +33,8 @@ Maupassant theme, ported to Hugo.
 15. RSS支持，并且可以自动发现RSS
 16. Google站内搜索
 17. See Also 支持
-18. Disqus评论支持
-19. 自定义css、js
+18. 自定义css、js
+19. Disqus评论支持
 20. utteranc评论
 21. 部分自定义的shortcode
 22. 文章自定义摘要
@@ -153,9 +153,9 @@ type: "search"
 
 ```toml
 [[params.links]]
-    title = "飞雪无情的博客"
-    name = "飞雪无情的博客"
-    url = "http://www.flysnow.org"
+    title = "闪电侠的小黑板"
+    name = "闪电侠的小黑板"
+    url = "http://www.chende.ren"
 ```
 
 `params.links`是一个数组，所以我们可以自定义很多友情链接。`name`表示显示的链接文本，`title`表示鼠标悬停在友情链接时，显示的文本。
@@ -201,7 +201,7 @@ type: archives
 
 ```toml
 [params]
-  beian = "粤ICP备XXXXXXX号-1"
+  beian = "京ICP备XXXXXXX号-1"
 ```
 
 以上配置中的备案信息要换成自己的
@@ -247,6 +247,15 @@ summaryLength = 140
 ```
 
 其中`name`和`link`可以换成自己使用的版权声明协议和链接
+
+#### See Also显示相关的文章
+
+每篇文章都会有自己的tags, 默认找出第一个tag相同的文章，取与当前文章最近的前后几篇文章显示，同时也会兼顾全局当前文章通时期文章的前一篇和后一篇，整体按实际倒叙排列。
+可以在`config.toml`里添加如下配置，指定最多显示多少篇相关文章。
+
+```toml
+relatedMaxLen = 8 # 相关文章最多显示
+```
 
 #### Disqus
 

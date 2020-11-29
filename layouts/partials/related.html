@@ -1,34 +1,51 @@
-{{ printf "%#v" . }}
+{{ $relatPages := slice }}
+{{if .Prev }}{{ $relatPages = $relatPages | append .Prev.Page }}{{ end }}
+{{if .Next }}{{ $relatPages = $relatPages | append .Next.Page }}{{ end }}
 
-{{ with .Params.tags }}
-    {{range .}}
-        {{ . }}
+{{ $currentPageUrl := .RelPermalink }}
+{{ if and .Params.tags .Site.Taxonomies.tags }}
+    {{ $name := index .Params.tags 0 | urlize }}
+    {{ $tag := index .Site.Taxonomies.tags $name }}
+
+    {{ $tagLen := len $tag.Pages }}
+    {{ $count := 0 }}
+    {{ $startIdx := 0 }}
+    {{ range $tag.Pages.ByDate }}
+        {{ if eq .RelPermalink $currentPageUrl }}
+            {{ $startIdx = sub $count 1 }}
+        {{ end }}
+        {{ $count = add $count 1 }}
     {{ end }}
-{{ end }}
 
-{{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
+    {{ $endIdx := add $startIdx .Site.Params.relatedMaxLen }}
+    {{ if lt $tagLen $endIdx }}
+        {{ $endIdx = $tagLen }}
+        {{ $startIdx = sub $endIdx .Site.Params.relatedMaxLen }}
+    {{ end }}
+    {{ if lt $startIdx 0 }}{{ $startIdx = 0 }}{{ end }}
+
+    {{ $relatPages = ($relatPages | append (after $startIdx $tag.Pages)) | uniq  }}
+
     <div class="post-archive">
         <h2>See Also</h2>
         <ul class="listing">
-            {{ range . }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-            {{ end }}
+            {{ range (first .Site.Params.relatedMaxLen $relatPages).ByDate.Reverse }}
+                {{ if ne .RelPermalink $currentPageUrl }}
+                    <li><a href="{{ .RelPermalink }}" class="link">{{ .Title }}</a></li>
+                {{ end }}
+            {{end}}
         </ul>
     </div>
+{{ else }}
+    {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedMaxLen }}
+    {{ with $related }}
+        <div class="post-archive">
+            <h2>See Also</h2>
+            <ul class="listing">
+                {{ range . }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
 {{ end }}
-
-{{/*{{ range (where (where .Site.Pages "Type" "in" .Site.Params.mainSections) "Kind" "page").GroupByDate "2006" }}*/}}
-{{/*    <h2>{{ .Key }}</h2>*/}}
-{{/*    <ul class="listing">*/}}
-{{/*        {{ range .Pages }}*/}}
-{{/*            <li>*/}}
-{{/*                <span class="date">{{ .Date.Format "2006/01/02" }}</span>*/}}
-{{/*                <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>*/}}
-{{/*                {{- with .Params.Categories -}}*/}}
-{{/*                    <span class="cate">{{- range . -}}[{{- . -}}]{{- end -}}</span>*/}}
-{{/*                {{- end -}}*/}}
-{{/*            </li>*/}}
-{{/*        {{ end }}*/}}
-{{/*    </ul>*/}}
-{{/*{{ end }}*/}}
