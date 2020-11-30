@@ -2,13 +2,13 @@
 
 Maupassant theme, ported to Hugo.
 
-1. 预览效果:[闪电侠的小黑板](http://www.chende.ren)
+预览效果：[闪电侠的小黑板](http://www.chende.ren)
 
-一款非常简洁、性能高的Hugo主题，适配不同的设备（PC，Mobile等）。 
+一款非常简洁、性能极高的Hugo主题，自适应不同的设备（PC，Mobile等）（自动调整显示模块）。 
 
 ## 说明
-1. [飞雪无情的博客](http://www.flysnow.org) 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
-2. [闪电侠的小黑板](http://www.chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些样式的修改，功能的调整。
+1. [闪电侠的小黑板](http://www.chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些样式的修改，功能的调整。
+2. [飞雪无情的博客](http://www.flysnow.org) 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
 
 ## Preview
 
@@ -17,37 +17,37 @@ Maupassant theme, ported to Hugo.
 ## 功能特性
 
 1. 支持Local Search 站内搜索
-2. 最近发表的文章支持，显示最近的10篇 
+2. 最近发表的文章支持，显示最近的12篇
 3. 分类支持，并且可以显示分类内的文章数量
 4. 标签云支持
 5. 文章目录支持
 6. 一键回到页面顶部
-13. 支持关键字SEO优化
-6. 自定义菜单支持，不限个数，自定义排序
-7. 自定义友情链接支持
-8. 支持文章按年份日期进行归档
-9. 支持GA分析统计
-17. 不蒜子页面计数器支持
-11. 代码高亮、代码行号
-10. sitemap站点地图
-5. RSS支持，并且可以自动发现RSS
-14. Google站内搜索
-15. See Also 支持
-16. Disqus评论支持
+7. 支持关键字SEO优化
+8. 自定义菜单支持，不限个数，自定义排序
+9. 自定义友情链接支持
+10. 支持文章按年份日期进行归档
+11. 支持GA分析统计
+12. 不蒜子页面计数器支持
+13. 代码高亮、代码行号
+14. sitemap站点地图
+15. RSS支持，并且可以自动发现RSS
+16. Google站内搜索
+17. See Also 支持
 18. 自定义css、js
-19. utteranc评论
-20. 部分自定义的shortcode
-21. 文章自定义摘要
-22. 自定义广告支持
-23. 自定义备案信息
-24. 自定义图片CDN
-25. 图片点击放大
-26. 带.html后缀的页面
+19. Disqus评论支持
+20. utteranc评论
+21. 部分自定义的shortcode
+22. 文章自定义摘要
+23. 自定义广告支持
+24. 自定义备案信息
+25. 自定义图片CDN
+26. 图片点击放大
+27. 发布带.html后缀的页面
 
 ## 下载安装
 
 ```bash
-cd <YOUR Bolg Root Dir>
+cd <Your bolg root dir>
 git clone https://github.com/qinchende/maupassant-hugo themes/maupassant
 ```
 
@@ -85,6 +85,7 @@ theme = "maupassant"
 更多配合和样式参考:
 
 [Configure Markup](https://gohugo.io/getting-started/configuration-markup)
+
 [Syntax Highlighting](https://gohugo.io/content-management/syntax-highlighting/)
 
 #### 自定义菜单
@@ -127,7 +128,7 @@ theme = "maupassant"
 ```toml
 toc = true
 ```
-我对文中目录的样式做了修改，移动到右侧边栏悬浮显示
+我对文中目录的样式做了修改，移动到右侧边栏悬浮显示（后面还会有进一步修改的计划）
 
 #### Local Search 站内搜索
 
@@ -152,9 +153,9 @@ type: "search"
 
 ```toml
 [[params.links]]
-    title = "飞雪无情的博客"
-    name = "飞雪无情的博客"
-    url = "http://www.flysnow.org"
+    title = "闪电侠的小黑板"
+    name = "闪电侠的小黑板"
+    url = "http://www.chende.ren"
 ```
 
 `params.links`是一个数组，所以我们可以自定义很多友情链接。`name`表示显示的链接文本，`title`表示鼠标悬停在友情链接时，显示的文本。
@@ -200,7 +201,7 @@ type: archives
 
 ```toml
 [params]
-  beian = "粤ICP备XXXXXXX号-1"
+  beian = "京ICP备XXXXXXX号-1"
 ```
 
 以上配置中的备案信息要换成自己的
@@ -226,16 +227,6 @@ type: archives
     Host = "https://cdn.jsdelivr.net/gh/user/user.github.io"
 ```
 
-#### Disqus
-
-该主题支持Disqus评论，如果要启用Disqus，可以在`config.toml`里添加如下配置即可.
-
-```toml
-disqusShortname = "yourdiscussshortname"
-```
-
-替换成你自己的Disqus名字即可。
-
 #### 自定义文章摘要
 
 该主题采用了Hugo内置的摘要支持，大家可以通过`<!--more-->`自定义自己的摘要，也可以使用自动摘要，使用自动摘要时，可以在`config.toml`中设置摘要的长度
@@ -256,6 +247,23 @@ summaryLength = 140
 ```
 
 其中`name`和`link`可以换成自己使用的版权声明协议和链接
+
+#### See Also显示相关的文章
+
+每篇文章都会有自己的tags, 默认找出第一个tag相同的文章，取与当前文章最近的前后几篇文章显示，同时也会兼顾全局当前文章同时期文章的前一篇和后一篇，整体按创建时间倒叙排列。
+可以在`config.toml`里添加如下配置，指定最多显示多少篇相关文章，默认最多显示8篇。
+
+```toml
+relatedMaxLen = 8 # 相关文章最多显示
+```
+
+#### Disqus
+
+该主题支持Disqus评论，如果要启用Disqus，可以在`config.toml`里添加如下配置即可.
+```toml
+disqusShortname = "yourdiscussshortname"
+```
+替换成你自己的Disqus名字即可。
 
 #### utteranc
 
@@ -312,7 +320,7 @@ uglyurls = true
     tech = "/:year/:month/:day/:filename"
 ```
 
-注意新版hugo(0.78以后吧) --uglyURLs 不再支持，取代的做法就是设置系统的环境变量:
+**注意**新版hugo(0.78以后吧) --uglyURLs 不再支持，取代的做法就是设置系统的环境变量:
 - env HUGO_UGLYURLS="true" hugo server -D
 - env HUGO_UGLYURLS="true" hugo -D
 
@@ -320,7 +328,7 @@ uglyurls = true
 ```
 ---
 title: {{ replace .Name "-" " " | title }}
-url: {{ replace .File.Dir "content" "" -}}{{- .Name -}}.html
+url: {{ with replace .File.Dir "content" "" -}}{{- replace . "\\" "/" -}}{{- end -}}{{- .Name -}}.html
 date: {{ .Date }}
 tags: []
 categories: []
@@ -456,7 +464,7 @@ draft: true
 
 ## 贡献
 
-欢迎大家贡献，不限于代码、Issue，功能特性，想法等等，期待看到你的PR或者ISSUE。
+欢迎大家贡献，不限于代码、`issue`，功能特性，想法等等，期待看到你的`PR`或者`issue`。
 
 ## 其他平台上的 Maupassant 主题
 
@@ -469,6 +477,4 @@ draft: true
 + Hugo: https://github.com/flysnow-org/maupassant-hugo
 + Hugo: https://github.com/qinchende/maupassant-hugo
 
-```
-
-```
+(THE END)
