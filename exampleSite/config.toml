@@ -1,4 +1,4 @@
-baseURL = "http://www.chende.ren"
+baseURL = "https://chende.ren"
 languageCode = "zh-CN"
 title = "闪电侠的小黑板"
 theme = "maupassant"
@@ -42,7 +42,7 @@ enableEmoji = true
 [[params.links]]
     title = "闪电侠的小黑板"
     name = "闪电侠的小黑板"
-    url = "http://www.chende.ren/"
+    url = "https://chende.ren"
 
 [[params.links]]
     title = "飞雪无情的博客"

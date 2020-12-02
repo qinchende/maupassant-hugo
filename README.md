@@ -2,12 +2,12 @@
 
 Maupassant theme, ported to Hugo.
 
-预览效果：[闪电侠的小黑板](http://www.chende.ren)
+预览效果：[闪电侠的小黑板](https://chende.ren)
 
 一款非常简洁、性能极高的Hugo主题，自适应不同的设备（PC，Mobile等）（自动调整显示模块）。 
 
 ## 说明
-1. [闪电侠的小黑板](http://www.chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些样式的修改，功能的调整。
+1. [闪电侠的小黑板](https://chende.ren) 从[飞雪无情](https://github.com/flysnow-org/maupassant-hugo) 的博客样式forked，做了些样式的修改，功能的调整。
 2. [飞雪无情的博客](http://www.flysnow.org) 主要是基于 Typecho [Cho](https://github.com/pagecho/maupassant/), 从 [JokerQyou](https://github.com/JokerQyou/maupassant-hugo) forked，修改和添加了很多功能而成，如GA统计、最近的文章、标签云、自定义菜单、按日期归档等 .
 
 ## Preview
@@ -155,7 +155,7 @@ type: "search"
 [[params.links]]
     title = "闪电侠的小黑板"
     name = "闪电侠的小黑板"
-    url = "http://www.chende.ren"
+    url = "https://chende.ren"
 ```
 
 `params.links`是一个数组，所以我们可以自定义很多友情链接。`name`表示显示的链接文本，`title`表示鼠标悬停在友情链接时，显示的文本。
@@ -172,7 +172,7 @@ type: "search"
 
 `params.ads`是一个数组，所以我们可以自定义很多广告。如果`img`存在，则优先使用图片广告,`title`表示鼠标悬停在广告链接时，显示的文本。
 
-具体效果参考 [http://www.chende.ren](http://www.chende.ren)
+具体效果参考 [https://chende.ren](https://chende.ren)
 
 #### 添加GA分析统计
 

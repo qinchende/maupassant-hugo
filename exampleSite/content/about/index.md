@@ -9,7 +9,7 @@ draft: false
 
 ### 自我介绍：
 
-欢迎来到闪电侠的个人网站。 [chende.ren](http://chende.ren/) 或 [faster.ren](http://faster.ren/)
+欢迎来到闪电侠的个人网站。 [chende.ren](https://chende.ren)
 
 博主大名陈德，网名闪电侠，大家都习惯叫我德哥。2007 年毕业于武汉工程大学计算机科学与技术专业，湖北省天门市人。有一些软件开发和IT部门管理经验。多年在金融相关企业工作，了解一些行业基础知识。
 

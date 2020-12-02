@@ -252,6 +252,16 @@ textarea {
     color: #999;
 }
 
+#nav-link {
+    position: relative;
+    float: right;
+    margin: -25px 0 0 0;
+}
+#nav-link img {
+    height: 22px;
+    opacity: 0.7;
+}
+
 #nav-menu {
     margin: 2px 0 -1px;
     padding: 0;
