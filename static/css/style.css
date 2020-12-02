@@ -496,7 +496,8 @@ textarea {
 }
 
 .post-content div.highlight pre {
-    background-color: #fcfcf6 !important;
+    /*background-color: #fcfcf6 !important;*/
+    background-color: #e9ecef !important;
 }
 
 .post-content p img {
