@@ -768,6 +768,10 @@ textarea.textarea {
     text-align: center;
 }
 
+#footer #guohui {
+    margin-bottom: -4px;
+}
+
 .error-page {
     margin-top: 100px;
     margin-bottom: 100px;

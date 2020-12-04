@@ -16,7 +16,7 @@ Maupassant theme, ported to Hugo.
 
 ## 功能特性
 
-1. 支持Local Search 站内搜索
+1. 支持Local Search站内搜索
 2. 最近发表的文章支持，显示最近的12篇
 3. 分类支持，并且可以显示分类内的文章数量
 4. 标签云支持
@@ -176,7 +176,7 @@ type: "search"
 
 #### 添加GA分析统计
 
-该主题已经支持了GA分析统计，只需要在`config.toml`配置里加入如下配置即可。
+该主题已经支持了最新版本的GA (google analytics)分析统计，只需要在在`config.toml`的`params`配置里加入如下配置即可。
 ```toml
 googleAnalytics = "GA ID"
 ```
@@ -231,9 +231,12 @@ type: archives
 
 该主题采用了Hugo内置的摘要支持，大家可以通过`<!--more-->`自定义自己的摘要，也可以使用自动摘要，使用自动摘要时，可以在`config.toml`中设置摘要的长度
 
+summaryLength参数好像控制的不是太好，我自己又在params下面加了一个参数：summaryLen，同时修改了一些模板代码；摘要的效果更好。
+
 ```toml
 # 默认是70
-summaryLength = 140 
+summaryLength = 140
+params.summaryLen = 140
 ```
 
 #### 开启版权声明

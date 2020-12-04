@@ -1,4 +1,15 @@
 <head>
+    {{ if .Site.Params.googleAnalytics }}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.Params.googleAnalytics -}}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '{{- .Site.Params.googleAnalytics -}}');
+        </script>
+    {{ end }}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +57,7 @@
     {{ end }}
 
     {{if .Site.Params.fancybox }}
-        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+        <link href="//cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
     {{ end }}
 
     <!-- custom css -->

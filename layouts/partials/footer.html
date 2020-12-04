@@ -1,9 +1,10 @@
 <footer id="footer">
     <div>
-        &copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }}</a>
-        {{ if .Site.Params.beian }}
-            | <img src="/img/guohui.png" /><a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn">{{.Site.Params.beian}}</a>
-        {{ end }}
+        &copy; {{- now.Format "2006" -}} <a href="{{- .Site.BaseURL | absURL -}}">{{- .Site.Params.author -}}</a>
+        {{- if .Site.Params.beian -}}
+            &ensp;|&ensp;<img id="guohui" src="/img/guohui.png"/>
+            <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn">{{- .Site.Params.beian -}}</a>
+        {{- end -}}
     </div>
     <br/>
     <div>
@@ -139,7 +140,7 @@
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='{{ "js/totop.js?v=0.0.0" | relURL }}' async=""></script>
-{{ template "_internal/google_analytics_async.html" . }}
+{{/*{{ template "_internal/google_analytics_async.html" . }}*/}}
 
 {{ if .Site.Params.busuanzi }}
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>

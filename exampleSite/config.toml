@@ -3,8 +3,6 @@ languageCode = "zh-CN"
 title = "闪电侠的小黑板"
 theme = "maupassant"
 
-#googleAnalytics = "GA ID"       ## 分析统计
-#googleAnalytics = ""            ## UA-XXXXXXXX-X
 disablePathToLower = true       # 是否禁止URL Path转小写
 summaryLength = 170             # 限制列表摘要字数
 hasCJKLanguage = true           # 这一句必须在summaryLength后面
@@ -20,6 +18,8 @@ enableEmoji = true
     keywords = "闪电侠,C,Go,Golang,Node.js,Python,Ruby,Flutter,Dart,博客,部门管理,软件架构,Web框架,高可用,高性能"
     description = "专注于IT互联网，包括但不限于Go语言(golang)、C/C++、Flutter、Dart、Python、项目管理、软件架构等"
 
+    googleAnalytics = "G-xxxxxx"    # G-XXXXXX 或者 UA-XXXXXX
+    #googleAd = "G-xxxxxx"
     localSearch = "true"            # 开启站内搜索
     beian = "京ICP备XXXX号-1"       # 备案号
     fancybox = "true"               # 图片点击放大
