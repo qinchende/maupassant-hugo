@@ -11,12 +11,16 @@
                 <date class="post-meta meta-date">
                     {{ .Date.Year }}年{{ printf "%d" .Date.Month }}月{{ .Date.Day }}日
                 </date>
+                {{ $firstTag := index .Params.Tags 0 }}
                 {{ with .Params.Categories }}
                     <div class="post-meta">
                         <span>|</span>
                         {{ range . }}
                             <span class="meta-category">
                                 <a href='{{ "categories/" | relURL }}{{ . | urlize }}'>{{ . }}</a>
+                                {{ if ne $firstTag . }}
+                                    -> <a href='{{ "tags/" | relURL }}{{ $firstTag | urlize }}'>{{ $firstTag }}</a>
+                                {{ end }}
                             </span>
                         {{ end }}
                     </div>
