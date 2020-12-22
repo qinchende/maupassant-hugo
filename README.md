@@ -327,17 +327,20 @@ uglyurls = true
 - env HUGO_UGLYURLS="true" hugo server -D
 - env HUGO_UGLYURLS="true" hugo -D
 
-但是全站都变成.html结尾的路径了，并不好，可以单独在每份Front Matter中指定url来设置，比如 archetypes/default.md 做统一配置
+但是全站每个md文件都会创建一个同名文件夹，然后其中放入index.html文件，并不好。可以单独在每份Front Matter中指定url，或者统一在
+archetypes/default.md 中配置，url参数有多种实现方案，大家可以自由定义。下面是一份TOML格式示例：
 ```
----
-title: {{ replace .Name "-" " " | title }}
-url: {{ with replace .File.Dir "content" "" -}}{{- replace . "\\" "/" -}}{{- end -}}{{- .Name -}}.html
-date: {{ .Date }}
-tags: []
-categories: []
-toc: false
-draft: true
----
++++
+title = "{{ replace .Name "-" " " | title }}"
+#url= {{ with replace .File.Dir "content" "" -}}{{- replace . "\\" "/" -}}{{- end -}}{{- .Name -}}.html
+url = "{{ now.Format "/2006/01/" }}{{- .Name -}}.html"
+date = "{{ .Date }}"
+lastmod = "{{ .Date }}"
+categories = []
+tags = []
+toc = false
+draft = true
++++
 ```
 
 #### 自定义CSS&JS

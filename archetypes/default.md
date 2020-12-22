@@ -1,9 +1,10 @@
----
-title: {{ replace .Name "-" " " | title }}
-url: {{ with replace .File.Dir "content" "" -}}{{- replace . "\\" "/" -}}{{- end -}}{{- .Name -}}.html
-date: {{ .Date }}
-tags: []
-categories: []
-toc: false
-draft: true
----
++++
+title = "{{ replace .Name "-" " " | title }}"
+url = "{{ now.Format "/2006/01/" }}{{- .Name -}}.html"
+date = "{{ .Date }}"
+lastmod = "{{ .Date }}"
+categories = []
+tags = []
+toc = false
+draft = true
++++
