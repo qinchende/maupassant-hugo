@@ -1,4 +1,4 @@
----
++++
 title = "{{ replace .Name "-" " " | title }}"
 url = "{{ now.Format "/2006/01/02-" }}{{- .Name -}}.html"
 date = "{{ .Date }}"
@@ -7,4 +7,4 @@ categories = []
 tags = []
 toc = false
 draft = true
----
++++
