@@ -1,0 +1,70 @@
+{{ $relatPages := slice }}
+{{/*{{if .Prev }}{{ $relatPages = $relatPages | append .Prev.Page }}{{ end }}*/}}
+{{/*{{if .Next }}{{ $relatPages = $relatPages | append .Next.Page }}{{ end }}*/}}
+
+{{ $currentPageUrl := .RelPermalink }}
+{{ if and .Params.tags .Site.Taxonomies.tags }}
+    {{ $name := index .Params.tags 0 | urlize }}
+    {{ $tag := index .Site.Taxonomies.tags $name }}
+
+    {{ $tagLen := len $tag.Pages }}
+    {{ $count := 0 }}
+    {{ $startIdx := 0 }}
+    {{ range $tag.Pages.ByDate }}
+        {{ if eq .RelPermalink $currentPageUrl }}
+            {{ $startIdx = sub $count 1 }}
+        {{ end }}
+        {{ $count = add $count 1 }}
+    {{ end }}
+
+    {{ $endIdx := add $startIdx 100 }}
+    {{ if lt $tagLen $endIdx }}
+        {{ $endIdx = $tagLen }}
+        {{ $startIdx = sub $endIdx 100 }}
+    {{ end }}
+    {{ if lt $startIdx 0 }}{{ $startIdx = 0 }}{{ end }}
+
+    {{ $relatPages = ($relatPages | append (after $startIdx $tag.Pages)) | uniq  }}
+
+    <link rel="stylesheet" href='{{ "css/sub_nav.css" | relURL }}'>
+    <div class="sub-nav" style="position: absolute;">
+        <h2 class="sub-nav-title">系列文章导航</h2>
+        <div class="sub-nav-content">
+            {{ range (first 100 $relatPages).ByDate.Reverse }}
+                <p><a href="{{ .RelPermalink }}" class="link" title="{{ .Title }}">{{ .Title }}</a></p>
+            {{ end }}
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let subNav = $(".sub-nav");
+            if (subNav.length <= 0) return;
+
+            let $body = $("#body")[0]
+            if (!$body) return;
+            let $content = $(".col-group")[0]
+            if (!$content) return;
+            var curWin = $(window)[0];
+
+            $(window).resize(function () {
+                changePos();
+            });
+
+            function changePos() {
+                let leftWidth = Math.ceil(($body.clientWidth - $content.clientWidth) / 2) - 30;
+                let margin_left = -(leftWidth + 30);
+
+                subNav.css({
+                    position: "fixed",
+                    width: leftWidth,
+                    "margin-left": margin_left,
+                    height: curWin.innerHeight,
+                    top: 0
+                });
+            }
+
+            changePos();
+        })
+    </script>
+{{ else }}
+{{ end }}

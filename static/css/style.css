@@ -133,7 +133,8 @@ pre {
     overflow: auto;
     border: 1px solid #ddd;
     display: block;
-    background-color: #f5f9fd;
+    background-color: #F8F8F8;
+    /*background-color: #f5f9fd;*/
 }
 
 code {
@@ -507,7 +508,7 @@ textarea {
 
 .post-content div.highlight pre {
     /*background-color: #fcfcf6 !important;*/
-    background-color: #e9ecef !important;
+    background-color: #F8F8F8 !important;
 }
 
 .post-content p img {

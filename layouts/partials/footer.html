@@ -23,7 +23,8 @@
     </div>
 </footer>
 
-{{ if .IsPage }}
+{{ if false }}
+    {{/*{{ if .IsPage }}*/}}
     <!-- graphviz -->
     {{- if and (or .Params.graphviz.enable (and .Site.Params.graphviz.enable (ne .Params.graphviz.enable false))) (or .IsPage .IsHome) -}}
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js"></script>
