@@ -34,6 +34,20 @@
                 <p><a href="{{ .RelPermalink }}" class="link" title="{{ .Title }}">{{ .Title }}</a></p>
             {{ end }}
         </div>
+
+        <hr style="margin: 20px 0 10px -10px; opacity: 0.4;" />
+        <div class="sub-nav-content">
+            {{ with (index .Site.Taxonomies.categories (index .Params.categories 0)) }}
+                {{/* {{ printf "%#v" . }}*/}}
+                {{/* {{ printf "%#v" $firstTag }}*/}}
+                {{/* {{ printf "%#v" $name }}*/}}
+                {{ range .Pages }}
+                    {{ if ne $name (index .Params.tags 0)  }}
+                        <p><a href="{{ .RelPermalink }}" class="link" title="{{ .Title }}">{{ .Title }}</a></p>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
