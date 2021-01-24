@@ -41,7 +41,7 @@
                 {{/* {{ printf "%#v" . }}*/}}
                 {{/* {{ printf "%#v" $firstTag }}*/}}
                 {{/* {{ printf "%#v" $name }}*/}}
-                {{ range .Pages }}
+                {{ range first 5 .Pages }}
                     {{ if ne $name (index .Params.tags 0)  }}
                         <p><a href="{{ .RelPermalink }}" class="link" title="{{ .Title }}">{{ .Title }}</a></p>
                     {{ end }}
